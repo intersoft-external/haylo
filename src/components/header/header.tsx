@@ -8,7 +8,6 @@ export function Header() {
 
     const handleLinkClick = () => setIsOpen(false);
 
-    // ✅ Store component, not JSX
     const socialLinks = [
         { Icon: Facebook, href: "https://facebook.com" },
         { Icon: Instagram, href: "https://instagram.com" },
