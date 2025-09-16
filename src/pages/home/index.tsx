@@ -6,6 +6,7 @@ import ServicesSection from "@/pages/home/components/service.tsx";
 import LeadershipSection from "@/pages/home/components/leadership.tsx";
 import CtaSection from "@/pages/home/components/cta-section.tsx";
 import GallerySection from "@/pages/home/components/gallery.tsx";
+import ScrollToTop from "@/components/scroll-to-top/scroll-to-top.tsx";
 
 const Home = () => {
     return (
@@ -34,7 +35,7 @@ const Home = () => {
             <section id="contact" className="section-anchor">
                 <CtaSection />
             </section>
-
+            <ScrollToTop />
             <Footer />
         </div>
     );

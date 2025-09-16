@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 /* Alternative legacy CSS in your global stylesheet */
+html {
+  scroll-behavior: smooth;
+}
 
 .section-anchor {
   padding-top: 80px;
