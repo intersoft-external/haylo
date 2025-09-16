@@ -1,24 +1,22 @@
-
-import { motion } from "framer-motion";
-import type { Variants, TargetAndTransition } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import type {TargetAndTransition, Variants} from "framer-motion";
+import {motion} from "framer-motion";
+import {BarChart3, Briefcase, ChevronRight, Star} from "lucide-react";
 import img1 from "@/assets/thumbnail.jpg";
-import { Star, Briefcase, BarChart3 } from "lucide-react";
 // Animations
 const containerVariants: Variants = {
-    hidden: { opacity: 0 },
+    hidden: {opacity: 0},
     visible: {
         opacity: 1,
-        transition: { staggerChildren: 0.2 },
+        transition: {staggerChildren: 0.2},
     },
 };
 
 const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: {opacity: 0, y: 30},
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
+        transition: {duration: 0.6, ease: "easeOut"},
     },
 };
 
@@ -53,7 +51,7 @@ const HeroSection = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.3 }}
+                    viewport={{amount: 0.3}}
                 >
                     {/* Left content */}
                     <div className="w-full space-y-6 text-center lg:text-left">
@@ -83,20 +81,20 @@ const HeroSection = () => {
                             variants={itemVariants}
                         >
                             <motion.button
-                                className="bg-gradient-to-r from-orange-500 to-red-500 hover:opacity-90 text-white font-semibold py-3 px-8 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+                                className="bg-gradient-to-r cursor-pointer from-orange-500 to-red-500 hover:opacity-90 text-white font-semibold py-3 px-8 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
                                 whileHover={buttonHover}
-                                whileTap={{ scale: 0.95 }}
+                                whileTap={{scale: 0.95}}
                             >
                                 View Portfolio
-                                <ChevronRight className="ml-2 h-5 w-5" />
+                                <ChevronRight className="ml-2 h-5 w-5"/>
                             </motion.button>
 
                             <motion.button
-                                className="border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
+                                className="border cursor-pointer border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                                 whileHover={buttonHover}
-                                whileTap={{ scale: 0.95 }}
+                                whileTap={{scale: 0.95}}
                             >
-                               Connect With Me
+                                Connect With Me
                             </motion.button>
                         </motion.div>
                     </div>
@@ -110,23 +108,35 @@ const HeroSection = () => {
             <div className="relative ">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
                     {[
-                        { number: "5+", label: "Years Experience", icon: <Briefcase className="w-12 h-12 text-orange-500" /> },
-                        { number: "200%", label: "ROI Increase", icon: <BarChart3 className="w-12 h-12 text-orange-500" /> },
-                        { number: "50+", label: "Projects Completed", icon: <Star className="w-12 h-12 text-orange-500" /> },
+                        {
+                            number: "5+",
+                            label: "Years Experience",
+                            icon: <Briefcase className="w-12 h-12 text-orange-500"/>
+                        },
+                        {
+                            number: "200%",
+                            label: "ROI Increase",
+                            icon: <BarChart3 className="w-12 h-12 text-orange-500"/>
+                        },
+                        {
+                            number: "50+",
+                            label: "Projects Completed",
+                            icon: <Star className="w-12 h-12 text-orange-500"/>
+                        },
                     ].map((stat, i) => (
                         <motion.div
                             key={i}
                             className="flex flex-col items-center"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: i * 0.15 }}
-                            viewport={{ amount: 0.3 }}
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            transition={{duration: 0.6, delay: i * 0.15}}
+                            viewport={{amount: 0.3}}
                         >
                             {/* Floating Icon */}
                             <motion.div
                                 className="mb-4"
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                animate={{y: [0, -10, 0]}}
+                                transition={{duration: 2, repeat: Infinity, ease: "easeInOut"}}
                             >
                                 {stat.icon}
                             </motion.div>
