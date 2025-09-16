@@ -1,5 +1,4 @@
 import {easeInOut, motion} from "framer-motion";
-import {Button} from "@/components/ui/button";
 import aboutMe1 from "@/assets/aboutme1.jpg";
 import aboutMe2 from "@/assets/aboutme2.jpg";
 
@@ -123,19 +122,6 @@ const AboutMe = () => {
                     aspect of my actions.
                 </motion.p>
 
-                {/* Button */}
-                <motion.div variants={itemVariants}>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-                        <Button
-                            className="bg-gradient-to-r from-pink-400 to-purple-400
-                hover:from-pink-500 hover:to-purple-500
-                text-white font-semibold px-6 py-3 rounded-lg
-                shadow-lg text-sm md:text-base transition"
-                        >
-                            More About Me
-                        </Button>
-                    </motion.div>
-                </motion.div>
             </motion.div>
         </section>
     );

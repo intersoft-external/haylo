@@ -30,7 +30,7 @@ export function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-50 bg-white/30 backdrop-blur-md shadow-md">
+        <header className="sticky top-0 z-50 bg-white shadow-md">
             <nav className="mx-auto px-6 md:px-20 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-3" onClick={() => setIsOpen(false)}>
