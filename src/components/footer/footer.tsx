@@ -138,7 +138,7 @@ export default function Footer() {
                 transition={{ delay: 0.5 }}
                 className="border-t border-gray-800 py-4 px-6 text-sm flex flex-col md:flex-row justify-between items-center text-gray-500"
             >
-                <p>© 2024 Haylo Marketing. All rights reserved.</p>
+                <p>© 2025 Haylo Marketing. All rights reserved.</p>
                 <div className="flex items-center gap-4 mt-2 md:mt-0">
                     <a href="#" className="hover:text-orange-400 transition-colors">
                         Privacy Policy
