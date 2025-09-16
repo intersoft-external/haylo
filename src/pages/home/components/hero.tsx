@@ -2,6 +2,7 @@ import type {TargetAndTransition, Variants} from "framer-motion";
 import {motion} from "framer-motion";
 import {BarChart3, Briefcase, ChevronRight, Star} from "lucide-react";
 import img1 from "@/assets/thumbnail.jpg";
+import { useNavigate } from "@tanstack/react-router";
 // Animations
 const containerVariants: Variants = {
     hidden: {opacity: 0},
@@ -31,7 +32,7 @@ const buttonHover: TargetAndTransition = {
 
 const HeroSection = () => {
     const backgroundImage = img1;
-
+const navigate=useNavigate()
     return (
         <section
             className="relative min-h-screen flex flex-col justify-between bg-black text-white py-20"
@@ -84,18 +85,13 @@ const HeroSection = () => {
                                 className="bg-gradient-to-r cursor-pointer from-orange-500 to-red-500 hover:opacity-90 text-white font-semibold py-3 px-8 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
                                 whileHover={buttonHover}
                                 whileTap={{scale: 0.95}}
+                                onClick={() => navigate({ to: "/contact" })}
                             >
-                                View Portfolio
+                                Connect With Me
                                 <ChevronRight className="ml-2 h-5 w-5"/>
                             </motion.button>
 
-                            <motion.button
-                                className="border cursor-pointer border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
-                                whileHover={buttonHover}
-                                whileTap={{scale: 0.95}}
-                            >
-                                Connect With Me
-                            </motion.button>
+
                         </motion.div>
                     </div>
 
