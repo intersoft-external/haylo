@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 import logo from '@/assets/Haylo.png'
 
 export function Header() {
@@ -15,25 +16,35 @@ export function Header() {
         { Icon: Linkedin, href: "https://linkedin.com" },
     ];
 
+    const menuItems = [
+        { name: "Home", to: "/#home" },
+        { name: "About Me", to: "/#aboutme" },
+        { name: "Services", to: "/#services" },
+        { name: "Leadership", to: "/#leadership" },
+        { name: "Gallery", to: "/#gallery" },
+        { name: "Contact", to: "/contact" }, // <-- TanStack route
+    ];
+
     return (
         <header className="sticky top-0 z-50 bg-white/30 backdrop-blur-md shadow-md">
             <nav className="mx-auto px-6 md:px-20 py-4 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#home" className="flex items-center space-x-3" onClick={handleLinkClick}>
+                <Link to="/" className="flex items-center space-x-3" onClick={handleLinkClick}>
                     <img src={logo} alt="Haylo Logo" className="h-16 w-24" />
-                </a>
+                </Link>
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex items-center space-x-8 font-medium text-gray-700">
-                    {["Home", "About Me", "Services", "Leadership", "Gallery", "Contact"].map((item) => (
-                        <li key={item}>
-                            <a
-                                href={`#${item.toLowerCase().replace(" ", "")}`}
+                    {menuItems.map((item) => (
+                        <li key={item.name}>
+                            <Link
+                                to={item.to}
                                 className="relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
+                                onClick={handleLinkClick}
                             >
-                                {item}
+                                {item.name}
                                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 transition-all group-hover:w-full"></span>
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -41,13 +52,13 @@ export function Header() {
                 {/* CTA + Social (Desktop) */}
                 <div className="hidden md:flex items-center space-x-4">
                     <Button asChild>
-                        <a
-                            href="#contact"
+                        <Link
+                            to="/contact"
                             className="relative px-5 py-2 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg
                                 transition-all duration-300 hover:scale-105 hover:shadow-xl"
                         >
                             Let's Talk
-                        </a>
+                        </Link>
                     </Button>
                     <div className="flex space-x-3">
                         {socialLinks.map(({ Icon, href }, idx) => (
@@ -77,21 +88,21 @@ export function Header() {
             {isOpen && (
                 <div className="md:hidden bg-white/80 backdrop-blur-md border-t shadow-lg">
                     <ul className="flex flex-col space-y-4 px-6 py-6 text-gray-700 font-medium">
-                        {["Home", "About Us", "Services", "Leadership", "Gallery", "Contact Us"].map((item) => (
-                            <li key={item}>
-                                <a
-                                    href={`#${item.toLowerCase().replace(" ", "")}`}
+                        {menuItems.map((item) => (
+                            <li key={item.name}>
+                                <Link
+                                    to={item.to}
                                     onClick={handleLinkClick}
                                     className="relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
                                 >
-                                    {item}
+                                    {item.name}
                                     <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 transition-all group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                         <li>
                             <Button asChild className="w-full mt-4 relative bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                                <a href="#contact" onClick={handleLinkClick}>Let's Talk</a>
+                                <Link to="/contact" onClick={handleLinkClick}>Let's Talk</Link>
                             </Button>
                         </li>
 
