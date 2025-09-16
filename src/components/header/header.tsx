@@ -50,7 +50,7 @@ export function Header() {
                         <li key={item.label}>
                             <button
                                 onClick={() => handleScroll(item.path, item.section)}
-                                className="relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
+                                className="cursor-pointer relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
                             >
                                 {item.label}
                                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 transition-all group-hover:w-full"></span>
@@ -64,7 +64,7 @@ export function Header() {
                     <Button asChild>
                         <button
                             onClick={() => handleScroll("/", "contact")} // scroll to contact section on home
-                            className="relative px-5 py-2 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                            className="relative cursor-pointer px-5 py-2 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                         >
                             Let's Talk
                         </button>
@@ -77,7 +77,7 @@ export function Header() {
                                 href={href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-gray-700 transition-all duration-300 hover:border-pink-500 hover:bg-pink-50 hover:text-pink-500 hover:scale-110"
+                                className="relative cursor-pointer w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-gray-700 transition-all duration-300 hover:border-pink-500 hover:bg-pink-50 hover:text-pink-500 hover:scale-110"
                             >
                                 <Icon className="w-5 h-5" />
                             </a>
@@ -88,7 +88,7 @@ export function Header() {
                 {/* Mobile Hamburger Icon */}
                 <div className="md:hidden">
                     <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
-                        {isOpen ? <X className="w-6 h-6 text-pink-500" /> : <Menu className="w-6 h-6 text-pink-500" />}
+                        {isOpen ? <X className="w-6 h-6 cursor-pointer text-pink-500" /> : <Menu className="w-6 cursor-pointer h-6 text-pink-500" />}
                     </button>
                 </div>
             </nav>
@@ -108,7 +108,7 @@ export function Header() {
                             <li key={item.label}>
                                 <button
                                     onClick={() => handleScroll(item.path, item.section)}
-                                    className="relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
+                                    className="cursor-pointer relative group px-1 py-1 hover:text-pink-500 transition-colors duration-300"
                                 >
                                     {item.label}
                                     <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-pink-500 transition-all group-hover:w-full"></span>
@@ -117,7 +117,7 @@ export function Header() {
                         ))}
 
                         <li>
-                            <Button asChild className="w-full mt-4 relative bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                            <Button asChild className="cursor-pointer w-full mt-4 relative bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
                                 <button onClick={() => handleScroll("/", "contact")}>Let's Talk</button>
                             </Button>
                         </li>
@@ -130,7 +130,7 @@ export function Header() {
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-gray-700 transition-all duration-300 hover:border-pink-500 hover:bg-pink-50 hover:text-pink-500 hover:scale-110"
+                                    className="cursor-pointer relative w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-gray-700 transition-all duration-300 hover:border-pink-500 hover:bg-pink-50 hover:text-pink-500 hover:scale-110"
                                 >
                                     <Icon className="w-5 h-5" />
                                 </a>
