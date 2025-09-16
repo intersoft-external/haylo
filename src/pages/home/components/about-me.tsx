@@ -33,7 +33,7 @@ const floating = {
 const AboutMe = () => {
     return (
         <section
-            className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 md:px-16 py-20
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-between px-6 md:px-20 py-20
         bg-gradient-to-br from-pink-50 via-purple-50 to-green-50 rounded-2xl shadow-xl"
         >
             {/* Left Images */}
@@ -48,7 +48,7 @@ const AboutMe = () => {
                 <motion.img
                     src={aboutMe1}
                     alt="aboutMe1"
-                    className="rounded-xl shadow-2xl w-full md:w-[75%] object-cover"
+                    className="rounded-xl shadow-2xl w-full  object-cover"
                     variants={itemVariants}
                 />
 
@@ -61,7 +61,7 @@ const AboutMe = () => {
                     <motion.img
                         src={aboutMe2}
                         alt="aboutMe2"
-                        className="w-36 md:w-48 rounded-lg shadow-2xl border-4 border-white
+                        className="w-36 md:w-52 rounded-lg shadow-2xl border-4 border-white
               transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
                     />
                     {/* Hover details */}

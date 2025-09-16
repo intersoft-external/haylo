@@ -64,7 +64,7 @@ const CtaSection = () => {
                      text-white font-semibold py-4 px-10 rounded-full
                      transition-all duration-300 text-lg shadow-md"
                 >
-                    Schedule a Consultation
+                    Book an Appointment
                 </Button>
             </motion.div>
         </motion.section>

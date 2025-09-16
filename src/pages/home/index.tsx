@@ -9,6 +9,7 @@ import GallerySection from "@/pages/home/components/gallery.tsx";
 
 const Home = () => {
     return (
+
         <div className="font-sans text-gray-900">
             <Header />
 

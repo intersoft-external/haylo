@@ -74,7 +74,7 @@ const hoverTransition: TargetAndTransition = {
 
 const GallerySection = () => {
     return (
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative px-6 md:px-20 py-20 overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">
                 <img
@@ -85,7 +85,7 @@ const GallerySection = () => {
                 <div className="absolute inset-0 bg-white/60 backdrop-blur-md"></div>
             </div>
 
-            <div className="relative max-w-6xl mx-auto px-6">
+            <div className="relative  mx-auto ">
                 {/* Heading */}
                 <div className="text-center mb-16">
           <span className="uppercase text-sm font-semibold text-orange-500">

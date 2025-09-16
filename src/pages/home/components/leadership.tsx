@@ -61,7 +61,7 @@ const LeadershipSection = () => {
     ];
 
     return (
-        <section className="relative bg-gradient-to-b from-white via-pink-50 to-orange-50 py-20 px-6 md:px-16 font-sans overflow-hidden">
+        <section className="relative bg-gradient-to-b from-white via-pink-50 to-orange-50 py-20 px-6 md:px-20 font-sans overflow-hidden">
             {/* Glow background effect */}
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-pink-200/30 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-green-200/30 rounded-full blur-3xl"></div>

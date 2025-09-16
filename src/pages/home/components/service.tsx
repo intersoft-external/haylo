@@ -61,7 +61,7 @@ const cardVariants: Variants = {
 
 const ServicesSection = () => {
     return (
-        <section className="py-16 px-6 md:px-16 bg-white relative">
+        <section className="py-16 px-6 md:px-20 bg-white relative">
             {/* Heading */}
             <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="uppercase text-lg font-semibold text-orange-400">
