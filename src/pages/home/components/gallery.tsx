@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import aboutme1 from "@/assets/aboutme1.jpg";
 import aboutme2 from "@/assets/aboutme2.jpg";
 import img2 from "@/assets/img2.jpg";
@@ -16,13 +16,8 @@ const images = [
     { src: img4 },
     { src: img3 },
     { src: img6 },
-
-
-
-
 ];
 
-// Card sizes (width x height) in grid units
 const cardSizes = [
     { w: 2, h: 2 },
     { w: 1, h: 2 },
@@ -33,16 +28,6 @@ const cardSizes = [
 ];
 
 export default function GallerySection() {
-    const [offsets, setOffsets] = useState<{ z: number }[]>([]);
-
-    useEffect(() => {
-        setOffsets(
-            images.map(() => ({
-                z: Math.floor(Math.random() * 10),
-            }))
-        );
-    }, []);
-
     return (
         <section className="relative px-6 md:px-20 py-20 overflow-hidden">
             <div className="text-center mb-16">
@@ -58,7 +43,7 @@ export default function GallerySection() {
             <div className="relative grid grid-cols-6 gap-4 auto-rows-[180px] md:auto-rows-[220px]">
                 {images.map((image, idx) => {
                     const size = cardSizes[idx % cardSizes.length];
-                    const yOffset = Math.floor(Math.random() * 40 - 20); // small random vertical offset
+                    const yOffset = Math.floor(Math.random() * 40 - 20);
 
                     return (
                         <motion.div
@@ -81,6 +66,5 @@ export default function GallerySection() {
                 })}
             </div>
         </section>
-
     );
 }
