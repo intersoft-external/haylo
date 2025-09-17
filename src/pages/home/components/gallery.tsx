@@ -43,16 +43,19 @@ export default function GallerySection() {
             </div>
 
             {/* Gallery Grid */}
-            <div className="relative grid grid-cols-6 gap-4 auto-rows-[minmax(180px,1fr)] md:auto-rows-[minmax(220px,1fr)]">
+            <div className="relative grid gap-4
+                      grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6
+                      auto-rows-[180px] sm:auto-rows-[180px] md:auto-rows-[220px] lg:auto-rows-[220px]">
                 {images.map((image, idx) => {
                     const size = cardSizes[idx % cardSizes.length];
 
                     return (
                         <motion.div
                             key={idx}
-                            className="relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300"
+                            className="relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-300 w-full"
                             style={{
-                                gridColumn: `span ${size.w}`,
+                                // On small screens, all images span full width
+                                gridColumn: `span ${size.w > 1 ? size.w : 1}`,
                                 gridRow: `span ${size.h}`,
                                 zIndex: idx,
                             }}
