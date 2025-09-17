@@ -48,7 +48,7 @@ const navigate=useNavigate()
             {/* Content */}
             <div className="flex-grow flex items-center justify-start relative z-10">
                 <motion.div
-                    className="px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between"
+                    className="px-4 sm:px-6 lg:px-12 xl:px-20 flex flex-col lg:flex-row items-center justify-between"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"

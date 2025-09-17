@@ -35,7 +35,7 @@ export default function ContactPage() {
 
     return (
         <Wrapper>
-            <section className="relative bg-gradient-to-tr from-pink-50 via-yellow-50 to-orange-50 py-24 px-6 md:px-16 flex flex-col items-center min-h-screen overflow-hidden">
+            <section className="relative bg-gradient-to-tr from-pink-50 via-yellow-50 to-orange-50 py-24 px-4 sm:px-6 lg:px-12 xl:px-20 flex flex-col items-center min-h-screen overflow-hidden">
 
                 {/* Info Section outside the card */}
                 <motion.div

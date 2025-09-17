@@ -29,7 +29,7 @@ const cardSizes = [
 
 export default function GallerySection() {
     return (
-        <section className="relative px-6 md:px-20 py-20 overflow-hidden">
+        <section className="relative px-4 sm:px-6 lg:px-12 xl:px-20 py-20 overflow-hidden">
             <div className="text-center mb-16">
                 <span className="uppercase text-sm font-semibold text-orange-500">Our Work</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">

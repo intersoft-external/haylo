@@ -1,21 +1,18 @@
-"use client";
-
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import type { Variants } from "framer-motion";
 
-const containerVariants: Variants = {
+const containerVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
 };
-
 const itemVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { type: "spring", stiffness: 120, damping: 20, duration: 0.7 },
+        transition: { type: "spring" as const, stiffness: 120, damping: 20, duration: 0.7 },
     },
 };
 
@@ -33,22 +30,22 @@ const CtaSection = () => {
 
     return (
         <motion.section
-            className="py-20 px-6 md:px-16 bg-gradient-to-r from-pink-50 via-orange-50 to-yellow-50"
+            className="py-20 px-4 sm:px-6 lg:px-12 xl:px-20 bg-gradient-to-r from-pink-50 via-orange-50 to-yellow-50"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
             variants={containerVariants}
         >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
                 {/* Left Text */}
-                <motion.div className="text-center md:text-left" variants={itemVariants}>
-                    <h2 className="text-4xl md:text-5xl font-extrabold mb-6" style={{ fontFamily: "Sirivennela, serif" }}>
+                <motion.div className="text-center md:text-left space-y-6" variants={itemVariants}>
+                    <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "Sirivennela, serif" }}>
                         Ready to Grow Your Business?
                     </h2>
                     <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                        If you're a business owner seeking to expand your marketing and sales,
-                        let's connect. My values, goals, and drive are a direct investment in
-                        your future success.
+                        If you're a business owner seeking to expand your marketing and sales, let's connect.
+                        My values, goals, and drive are a direct investment in your future success.
                     </p>
                 </motion.div>
 
@@ -89,12 +86,13 @@ const CtaSection = () => {
                         <Button
                             type="submit"
                             style={{ fontFamily: "Sirivennela, serif" }}
-                            className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-semibold py-4 px-10 rounded-full shadow-md transition-all duration-300"
+                            className="cursor-pointer bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white font-semibold py-4 px-10 rounded-full shadow-md transition-all duration-300"
                         >
                             Connect With Me
                         </Button>
                     </motion.div>
                 </motion.form>
+
             </div>
         </motion.section>
     );

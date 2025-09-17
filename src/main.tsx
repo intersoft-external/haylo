@@ -1,7 +1,8 @@
-import { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import './index.css'
+
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
@@ -15,13 +16,17 @@ declare module '@tanstack/react-router' {
     }
 }
 
+// Optional: Preload the root route (use actual path)
+router.preloadRoute({ to: '/' })
+
 // Render the app
 const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement)
+
+    const App = <RouterProvider router={router} />
+
     root.render(
-        <StrictMode>
-            <RouterProvider router={router} />
-        </StrictMode>,
+        process.env.NODE_ENV === 'development' ? <React.StrictMode>{App}</React.StrictMode> : App
     )
 }
